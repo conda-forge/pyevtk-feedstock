@@ -1,0 +1,36 @@
+From b6e7afb8b340cd750c51f801b9e00907e2729b0b Mon Sep 17 00:00:00 2001
+From: Xylar Asay-Davis <xylarstorm@gmail.com>
+Date: Wed, 13 Mar 2019 18:48:25 -0600
+Subject: [PATCH] Fix README in MANIFEST and setup.py
+
+---
+ MANIFEST | 2 +-
+ setup.py | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/MANIFEST b/MANIFEST
+index 0313641..2a85fef 100644
+--- a/MANIFEST
++++ b/MANIFEST
+@@ -1,4 +1,4 @@
+-README.txt
++README.md
+ setup.py
+ LICENSE
+ src/__init__.py
+diff --git a/setup.py b/setup.py
+index 5a81d05..d19be74 100644
+--- a/setup.py
++++ b/setup.py
+@@ -39,7 +39,7 @@ setup(
+     name = 'evtk',
+     version = '1.1.1',
+     description = 'Export data as binary VTK files',
+-    long_description = readme('README.txt'),
++    long_description = readme('README.md'),
+     author = 'Paulo Herrera',
+     author_email = 'pauloa.herrera@gmail.com',
+     url = 'https://bitbucket.org/pauloh/pyevtk',
+-- 
+2.17.1
+

@@ -1,23 +1,26 @@
+{% set name = "PyEVTK" %}
 {% set version = "1.1.1" %}
 
 package:
-    name: pyevtk
-    version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: https://github.com/pyscience-projects/pyevtk/archive/v{{version}}.tar.gz
-  sha256: 0f576dc06dc8789970b8d6d0155e7ec1a62d5e60d86c7927ff83f7c4883c5c81
+  url: https://github.com/paulo-herrera/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: cab240a2ea60b538395e440efe6ff1da9c7147b3110f5963eb5779fc867da675
+  patches:
+  - fix_manifest.patch
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   noarch: python
 
 requirements:
   host:
     - python
     - pip
-    - numpy
+    - numpy >=1.8.0
     - pytest-runner
 
   run:
@@ -25,17 +28,36 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
 test:
-
   imports:
-    - pyevtk
-    - pyevtk.hl
+    - evtk
+    - evtk.hl
+    - evtk.evtk
+    - evtk.vtk
+    - evtk.xml
+  commands:
+    - python -m evtk.examples.group
+    - python -m evtk.examples.image
+    - python -m evtk.examples.lines
+    - python -m evtk.examples.lowlevel
+    - python -m evtk.examples.points
+    - python -m evtk.examples.poly_lines
+    - python -m evtk.examples.rectilinear
+    - python -m evtk.examples.structured
+    - python -m evtk.examples.unstructured
 
 about:
-  home: https://github.com/pyscience-projects/pyevtk
+  home: https://github.com/paulo-herrera/PyEVTK
   license: BSD 2-clause
-  license_file: LICENSE.txt
-  summary: EVTK (Export VTK) package allows exporting data to binary VTK files for visualization and data analysis with any of the visualization packages that support VTK files, e.g. Paraview, VisIt and Mayavi. EVTK does not depend on any external library (e.g. VTK), so it is easy to install in different systems.
+  license_family: BSD
+  license_file: src/LICENSE
+  summary: Export data as binary VTK files
+  description: |
+    EVTK (Export VTK) package allows exporting data to binary VTK files for
+    visualization and data analysis with any of the visualization packages that
+    support VTK files, e.g. Paraview, VisIt and Mayavi.
+  dev_url: https://github.com/paulo-herrera/PyEVTK
 
 extra:
   recipe-maintainers:
     - renefritze
+    - xylar
