@@ -25,30 +25,13 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
 test:
-
+  requires:
+    - pytest
   source_files:
     - examples/*.py
-  imports:
-    - pyevtk
-    - pyevtk.hl
-    - pyevtk.evtk
-    - pyevtk.vtk
-    - pyevtk.xml
-    - evtk
-    - evtk.hl
-    - evtk.evtk
-    - evtk.vtk
-    - evtk.xml
+    - tests/*.py
   commands:
-    - python examples/group.py
-    - python examples/image.py
-    - python examples/lines.py
-    - python examples/lowlevel.py
-    - python examples/points.py
-    - python examples/poly_lines.py
-    - python examples/rectilinear.py
-    - python examples/structured.py
-    - python examples/unstructured.py
+    - pytest tests/dummy.py
 about:
   home: https://github.com/pyscience-projects/pyevtk
   license: BSD 2-clause
