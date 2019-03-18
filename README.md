@@ -11,7 +11,12 @@ Package license: BSD 2-clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: EVTK (Export VTK) package allows exporting data to binary VTK files for visualization and data analysis with any of the visualization packages that support VTK files, e.g. Paraview, VisIt and Mayavi. EVTK does not depend on any external library (e.g. VTK), so it is easy to install in different systems.
+Summary: EVTK (Export VTK) package allows exporting data to binary VTK files for
+visualization and data analysis with any of the visualization packages that
+support VTK files, e.g. Paraview, VisIt and Mayavi. EVTK does not depend on
+any external library (e.g. VTK), so it is easy to install in different
+systems.
+
 
 
 
@@ -114,4 +119,5 @@ Feedstock Maintainers
 =====================
 
 * [@renefritze](https://github.com/renefritze/)
+* [@xylar](https://github.com/xylar/)
 
