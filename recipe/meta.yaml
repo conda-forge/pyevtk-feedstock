@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
     name: pyevtk
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/pyscience-projects/pyevtk/archive/v{{version}}.tar.gz
-  sha256: 0f576dc06dc8789970b8d6d0155e7ec1a62d5e60d86c7927ff83f7c4883c5c81
+  sha256: ce6cedc5d9fcfa971752d355530adda899ad9dbf3355bc484e2e48c2e0691016
 
 build:
   number: 0
@@ -25,17 +25,27 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
 test:
-
-  imports:
-    - pyevtk
-    - pyevtk.hl
-
+  requires:
+    - pytest
+  source_files:
+    - examples/*.py
+    - tests/*.py
+  commands:
+    - pytest tests/dummy.py
 about:
   home: https://github.com/pyscience-projects/pyevtk
   license: BSD 2-clause
+  license_family: BSD
   license_file: LICENSE.txt
-  summary: EVTK (Export VTK) package allows exporting data to binary VTK files for visualization and data analysis with any of the visualization packages that support VTK files, e.g. Paraview, VisIt and Mayavi. EVTK does not depend on any external library (e.g. VTK), so it is easy to install in different systems.
+  summary: |
+    EVTK (Export VTK) package allows exporting data to binary VTK files for
+    visualization and data analysis with any of the visualization packages that
+    support VTK files, e.g. Paraview, VisIt and Mayavi. EVTK does not depend on
+    any external library (e.g. VTK), so it is easy to install in different
+    systems.
+  dev_url: https://github.com/paulo-herrera/PyEVTK
 
 extra:
   recipe-maintainers:
     - renefritze
+    - xylar
