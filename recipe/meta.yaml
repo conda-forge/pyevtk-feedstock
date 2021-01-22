@@ -1,28 +1,28 @@
-{% set version = "1.1.2" %}
+{% set version = "1.2.0" %}
 
 package:
-    name: pyevtk
-    version: {{ version }}
+  name: pyevtk
+  version: {{ version }}
 
 source:
-  url: https://github.com/pyscience-projects/pyevtk/archive/v{{version}}.tar.gz
-  sha256: ce6cedc5d9fcfa971752d355530adda899ad9dbf3355bc484e2e48c2e0691016
+  url: https://github.com/pyscience-projects/pyevtk/archive/v{{ version }}.tar.gz
+  sha256: abb70492d4a0ba55d90848ab576b0a36c57cecd59ab890dba3ef90314efae28e
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
   noarch: python
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - numpy
     - pytest-runner
 
   run:
-    - python
-    - {{ pin_compatible('numpy') }}
+    - python >=3.6
+    - numpy
 
 test:
   requires:
@@ -34,7 +34,7 @@ test:
     - pytest tests/dummy.py
 about:
   home: https://github.com/pyscience-projects/pyevtk
-  license: BSD 2-clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: |
