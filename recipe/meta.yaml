@@ -1,4 +1,4 @@
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 package:
   name: pyevtk
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/pyscience-projects/pyevtk/archive/v{{ version }}.tar.gz
-  sha256: d0fd7d2f5402749d42124c0d849f7642f3758898bc2bef50e67b9ef5082cf48d
+  sha256: 72fe9a4c9b55349a81fa0c424c4f7daaf7bea84814c178b12c38db17e0b385d6
 
 build:
   number: 0
