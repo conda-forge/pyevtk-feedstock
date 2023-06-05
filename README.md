@@ -1,11 +1,11 @@
-About pyevtk
-============
+About pyevtk-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyevtk-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/pyscience-projects/pyevtk
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyevtk-feedstock/blob/main/LICENSE.txt)
 
 Summary: EVTK (Export VTK) package allows exporting data to binary VTK files for
 visualization and data analysis with any of the visualization packages that
